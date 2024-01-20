@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +32,7 @@
                 <a href="registrationFiles/register.html">
                     <button class="btn">Sign Up</button>
                 </a>
-                <div id="signout" class="fas fa-sign-out"></div>
+                <div id="signout" class="fas fa-sign-out" title="Log Out"></div>
             </div>
         </div>
 
@@ -61,7 +60,7 @@
         <div class="row">
             <div class="content">
                 <h3>Welcome <main class="text-center mt-5">
-                        <h1 id="greet" style="color:#0c9ec7;"></h1>
+                        <h3 id="greet" style="color:#0c9ec7;"></h3>
                     </main> To Bibliophile Bookstore</h3>
                 <p>Welcome to the literary haven that is our bookstore, where each shelf holds a treasure trove of
                     stories waiting
@@ -71,7 +70,7 @@
                     through the
                     boundless realms of imagination within these walls.
                 </p>
-                <a href="" class="btn">Add Now</a>
+                <button class="btn" id="addNowBtn">Add Your Books Now</button>
             </div>
             <div class="swiper books-list">
                 <div class="swiper-wrapper">
@@ -87,6 +86,10 @@
                 <!--<img class="stand" src="bs2.jpg" alt="">-->
             </div>
         </div>
+    </section>
+
+    <section>
+        <div id="addedBooks"></div>
     </section>
 
     <!--icons selection-->
@@ -306,93 +309,10 @@
     <section class="arrivals" id="arrivals">
         <div class="heading"><span>new arrivals</span></div>
         <div class="swiper arrivals-slider">
-            <div class="swiper-wrapper">
-                <a href="" class="swiper-slide box">
-                    <div class="image">
-                        <img src="book1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">RS.299 <span>RS.399</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="swiper-slide box">
-                    <div class="image">
-                        <img src="book2.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">RS.299 <span>RS.399</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="swiper-slide box">
-                    <div class="image">
-                        <img src="book3.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">RS.299 <span>RS.399</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="swiper-slide box">
-                    <div class="image">
-                        <img src="book4.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">RS.299 <span>RS.399</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="swiper-slide box">
-                    <div class="image">
-                        <img src="book5.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrivals</h3>
-                        <div class="price">RS.299 <span>RS.399</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="swiper-wrapper">
+
             <a href="" class="swiper-slide box">
                 <div class="image">
-                    <img src="book6.jpg" alt="">
+                    <img src="book1.jpg" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -408,7 +328,7 @@
             </a>
             <a href="" class="swiper-slide box">
                 <div class="image">
-                    <img src="book7.jpg" alt="">
+                    <img src="book2.jpg" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -424,7 +344,7 @@
             </a>
             <a href="" class="swiper-slide box">
                 <div class="image">
-                    <img src="book8.jpg" alt="">
+                    <img src="book3.jpg" alt="">
                 </div>
                 <div class="content">
                     <h3>new arrivals</h3>
@@ -438,6 +358,39 @@
                     </div>
                 </div>
             </a>
+            <a href="" class="swiper-slide box">
+                <div class="image">
+                    <img src="book4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>new arrivals</h3>
+                    <div class="price">RS.299 <span>RS.399</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+            <a href="" class="swiper-slide box">
+                <div class="image">
+                    <img src="book5.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>new arrivals</h3>
+                    <div class="price">RS.299 <span>RS.399</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a>
+
             <a href="" class="swiper-slide box">
                 <div class="image">
                     <img src="book9.jpg" alt="">
@@ -453,8 +406,22 @@
                         <i class="fas fa-star-half-alt"></i>
                     </div>
                 </div>
-            </a>
-            <a href="" class="swiper-slide box">
+            </a> <a href="" class="swiper-slide box">
+                <div class="image">
+                    <img src="book11.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>new arrivals</h3>
+                    <div class="price">RS.299 <span>RS.399</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </a> <a href="" class="swiper-slide box">
                 <div class="image">
                     <img src="book10.jpg" alt="">
                 </div>
@@ -472,32 +439,37 @@
             </a>
         </div>
         </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section about" style="padding: 10px; margin: 10px;">
+                        <h2>About Us</h2>
+                        <p>Welcome to Bibliophile Bookstore, your literary haven for discovering and exploring a curated
+                            collection of books.</p>
+                    </div>
+                    <div class="quick-links" style="padding: 10px; margin: 10px;">
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#" class="social-icon"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section contact" style="padding: 10px; margin: 10px;">
+                        <h2>Contact Us</h2>
+                        <p>Email: info@bibliophile.com</p>
+                        <p>Phone: +1 123 456 7890</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Bibliophile Bookstore. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
     </section>
-
-    <script>
-        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
-        let GreetHead = document.getElementById('greet');
-        let SignoutBtn = document.getElementById('signout');
-
-        if (UserInfo && UserInfo.fullname) {
-            GreetHead.innerText = `${UserInfo.fullname}!`;
-        } else {
-
-            SignoutBtn.style.display = 'none';
-        }
-
-        let SignOut = () => {
-            sessionStorage.removeItem("user-creds");
-            sessionStorage.removeItem("user-info");
-            window.location.href = "index.html";
-        }
-
-        SignoutBtn.addEventListener('click', SignOut);
-
-    </script>
-
-
-
     <!--swiper cdn link-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!--js file link-->

@@ -6,6 +6,64 @@ document.querySelector('#search-btn').onclick = () => {
     console.log("search form");
 }
 
+// Log out logics
+
+let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+let GreetHead = document.getElementById('greet');
+let SignoutBtn = document.getElementById('signout');
+
+if (UserInfo && UserInfo.fullname) {
+    GreetHead.innerText = `${UserInfo.fullname}!`;
+} else {
+
+    SignoutBtn.style.display = 'none';
+}
+
+let SignOut = () => {
+    sessionStorage.removeItem("user-creds");
+    sessionStorage.removeItem("user-info");
+    window.location.href = "index.html";
+}
+
+SignoutBtn.addEventListener('click', SignOut);
+
+
+// Add book section
+document.addEventListener('DOMContentLoaded', function () {
+    var addNowBtn = document.getElementById('addNowBtn');
+    var addedBooksDiv = document.getElementById('addedBooks');
+    var UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+
+    addNowBtn.addEventListener('click', function () {
+        if (UserInfo && UserInfo.fullname) {
+            var bookTitle = prompt('Enter the book title:');
+            var bookAuthor = prompt('Enter the book author:');
+            var bookImage = prompt('Enter the book image URL:');
+
+            if (bookTitle && bookAuthor && bookImage) {
+                var addedBookDiv = document.createElement('div');
+                addedBookDiv.innerHTML = `
+                    <div class="book-details">
+                        <img src="${bookImage}" alt="${bookTitle}" style="max-width: 100px; max-height: 150px;">
+                        <p><strong>Title:</strong> ${bookTitle}</p>
+                        <p><strong>Author:</strong> ${bookAuthor}</p>
+                    </div>
+                `;
+
+                addedBooksDiv.appendChild(addedBookDiv);
+            } else {
+                alert('Please enter book title, author, and image URL.');
+            }
+        } else {
+            var confirmRegister = confirm('You need to be signed in to add books. Do you want to register now?');
+            
+            if (confirmRegister) {
+                window.location.href = "registrationFiles/register.html";
+            }
+        }
+    });
+});
+
 //     home section
 
 var swipper= new Swiper('.books-list' , {
@@ -57,3 +115,5 @@ varswiper = new Swiper(".featured-slider",{
         },
     },
 });
+      
+
