@@ -177,6 +177,7 @@ html::-webkit-scrollbar-thumb{
         display: inline-block;
     }
 }
+
 .btn{
     margin-top: 1rem;
     display: inline-block;
@@ -191,6 +192,22 @@ html::-webkit-scrollbar-thumb{
 }
 .btn:hover{
     background: var(--dark-color);
+}
+.login-form-container form p{
+    padding-top: 0.8rem;
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+.login-form-container form p a{
+    text-decoration: underline;
+    color: var(--blue);
+}
+.login-form-container #close-login-btn{
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 5rem;
+    cursor: pointer;
 }
 
 /*home sec start*/
@@ -498,3 +515,4 @@ section{
 .quick-links a:hover {
     text-decoration: underline;
 }
+

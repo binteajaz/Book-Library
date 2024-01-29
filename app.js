@@ -1,5 +1,5 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { initializeApp, getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
   getDatabase,
   set,
@@ -20,9 +20,6 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth(app);
 
-
-
-
 //   search btn
 
 searchform = document.querySelector('.search-form');
@@ -31,7 +28,7 @@ document.querySelector('#search-btn').onclick = () => {
     console.log("search form");
 }
 
-// Log out logics
+// Log out logics and greet logics
 
 let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
 let GreetHead = document.getElementById('greet');
@@ -141,4 +138,54 @@ varswiper = new Swiper(".featured-slider",{
     },
 });
       
+// 
 
+var swiper= new Swiper('.books-list' , {
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+        delay: 9500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1
+        },
+        768: {
+            slidesPerView: 2
+        },
+        1040: {
+            slidesPerView: 3
+        },
+    },
+});
+
+//      featured section
+
+var swiper = new Swiper(".featured-slider",{
+    spaceBetween:10,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+        delay: 9500,
+        disableOnInteraction: false,
+    },
+    navigation:{
+        nextEl:".swiper-button-next",
+        prevEl:".swiper-button-prev"
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1
+        },
+        450: {
+            slidesPerView: 2
+        },
+        768: {
+            slidesPerView: 3
+        },
+        1040: {
+            slidesPerView: 4
+        },
+    },
+});
