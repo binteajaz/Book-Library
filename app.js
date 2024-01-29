@@ -1,3 +1,28 @@
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getDatabase,
+  set,
+  ref,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyA8aV998ApaPujzQTkCoD4E50sx0s60xyM",
+authDomain: "fir-project-b174a.firebaseapp.com",
+projectId: "fir-project-b174a",
+storageBucket: "fir-project-b174a.appspot.com",
+messagingSenderId: "923392808645",
+appId: "1:923392808645:web:29ad01061df8b0df4c42ac",
+measurementId: "G-XQLV1F1DQ6"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const auth = getAuth(app);
+
+
+
+
 //   search btn
 
 searchform = document.querySelector('.search-form');
